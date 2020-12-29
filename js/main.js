@@ -14,30 +14,29 @@ submit.addEventListener("click",e=>{
   let data = formdata.get("subject");
   url = "../docs/" + data + ".pdf" ;
   console.log(url);
-  // Get Document
-  
-  pdfjsLib
-    .getDocument(url)
-    .promise.then(pdfDoc_ => {
-      pdfDoc = pdfDoc_;
-
-      document.querySelector('#page-count').textContent = pdfDoc.numPages;
-
-      renderPage(pageNum);
-    })
-    .catch(err => {
-      // Display error
-      const div = document.createElement('div');
-      div.className = 'error';
-      div.appendChild(document.createTextNode(err.message));
-      document.querySelector('body').insertBefore(div, canvas);
-      // Remove top bar
-      document.querySelector('.top-bar').style.display = 'none';
-    });
-
 });
 
 
+  // Get Document
+  
+pdfjsLib
+  .getDocument(url)
+  .promise.then(pdfDoc_ => {
+    pdfDoc = pdfDoc_;
+
+    document.querySelector('#page-count').textContent = pdfDoc.numPages;
+
+    renderPage(pageNum);
+  })
+  .catch(err => {
+    // Display error
+    const div = document.createElement('div');
+    div.className = 'error';
+    div.appendChild(document.createTextNode(err.message));
+    document.querySelector('body').insertBefore(div, canvas);
+    // Remove top bar
+    document.querySelector('.top-bar').style.display = 'none';
+  });
 
 
 let pdfDoc = null,
@@ -178,5 +177,3 @@ function updateThumbnail(dropZoneElement, file) {
     thumbnailElement.style.backgroundImage = null;
   }
 }
-
-
