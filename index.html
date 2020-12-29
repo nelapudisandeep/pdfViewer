@@ -14,7 +14,9 @@
     <title>PDF Viewer</title>
   </head>
   <body>
-    <div class="top-bar">
+   <div class="container" id="opener">
+<!--      rendering of the top bar for the header    -->
+      <div class="top-bar">
       <button class="btn" id="prev-page">
         <i class="fas fa-arrow-circle-left"></i> Prev Page
       </button>
@@ -25,8 +27,27 @@
         Page <span id="page-num"></span> of <span id="page-count"></span>
       </span>
     </div>
-
+     
+    <!--   rendering of the pdf    -->
     <canvas id="pdf-render"></canvas>
+     
+    </div>
+    
+<!--     select the pdf to read   -->
+    <form class="form">
+      
+      <select name="subject" >
+        <option name="network" value="network" >Network Theory</option>
+        <option name="analog" value="analog" >Analog Electronics</option>
+        <option name="digital" value="digital" >Digital Electronics</option>
+        <option name="signals" value="signals" >Signals and System</option>
+        <option name="maths" value="maths" >Mathematics and Aptitude</option>
+      </select>
+      
+      <input type="submit" name="submit" id="submit">
+  
+    </form>
+    
 
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script src="js/main.js"></script>
