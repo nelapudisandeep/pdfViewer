@@ -4,18 +4,21 @@
 }
 
 .top-bar {
-  background: #333;
+  background: #aaa;
   color: #fff;
   padding: 1rem;
+  margin:0.2rem ;
+  width:50%;
 }
 
 .btn {
-  background: coral;
+  background: #333;
   color: #fff;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 0.7rem 2rem;
+  border-radius:5rem;
 }
 
 .btn:hover {
@@ -27,7 +30,62 @@
 }
 
 .error {
-  background: orangered;
+  background: black;
   color: #fff;
   padding: 1rem;
+}
+
+/* opener styles */
+
+.container{
+  width:100%;
+  min-height:100vh;
+  background:black;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction : column;
+  display:none;
+}
+
+
+/* form styles */
+.form{
+  width:75%;
+  margin:auto;
+  font-size:1.2rem;
+  font-family:monospace cursive;
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:url("https://cdn.glitch.com/68dd70db-d851-419d-8cce-bf91116c15a7%2Fphilippe-toupet-R261qkc-nDE-unsplash.jpg?v=1609240892188") no-repeat;
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+
+select{
+  padding:1rem 2rem;
+  min-width:450px;
+  border-radius:5px;
+  font-size:1.2rem;
+}
+
+input[type="submit"]{
+  padding:1rem 2rem;
+  background:white;
+  color:#000c;
+  border-radius:5px;
+  border:2px solid transparent;
+  margin: 0 1rem;
+  cursor:pointer;
+  font-size:1.2rem;
+}
+
+input[type="submit"]:hover{
+  font-weight:bold;
+  transition:0.5s ease all;
+  
 }
